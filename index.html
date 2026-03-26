@@ -1,0 +1,1134 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Devenir Membre — Parti Politique VAR</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --var-red: #C41E2A;
+            --var-red-dark: #9E1822;
+            --var-red-light: #E8323E;
+            --var-white: #FFFFFF;
+            --var-cream: #FAFAFA;
+            --var-dark: #1A1A1A;
+            --var-text: #2D2D2D;
+            --var-muted: #6B6B6B;
+            --var-border: #E0E0E0;
+            --var-bg-light: #F5F5F5;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background: var(--var-cream);
+            color: var(--var-text);
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        /* ========== SECTION 1 — HERO ========== */
+        .hero {
+            background: var(--var-dark);
+            padding: 3rem 0 4rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 40%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(196, 30, 42, 0.15) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .hero .container {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-label {
+            display: inline-block;
+            font-size: 0.7rem;
+            font-weight: 800;
+            letter-spacing: 0.25em;
+            text-transform: uppercase;
+            color: var(--var-red);
+            border: 1px solid rgba(196, 30, 42, 0.4);
+            padding: 0.4rem 1rem;
+            border-radius: 4px;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2.5rem, 7vw, 4rem);
+            color: var(--var-white);
+            line-height: 1.1;
+            margin-bottom: 1rem;
+        }
+
+        .hero-subtitle {
+            font-size: clamp(1rem, 2.5vw, 1.15rem);
+            color: rgba(255, 255, 255, 0.7);
+            line-height: 1.6;
+            max-width: 540px;
+            margin-bottom: 0.75rem;
+        }
+
+        .hero-slogan {
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            font-size: 1.1rem;
+            color: var(--var-red);
+            margin-bottom: 2rem;
+        }
+
+        .hero-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+            background: var(--var-red);
+            color: var(--var-white);
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .hero-cta:hover {
+            background: var(--var-red-light);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(196, 30, 42, 0.4);
+        }
+
+        .hero-cta svg {
+            transition: transform 0.3s ease;
+        }
+
+        .hero-cta:hover svg {
+            transform: translateX(3px);
+        }
+
+        /* ========== SECTION SHARED ========== */
+        .section {
+            padding: 3.5rem 0;
+        }
+
+        .section-alt {
+            background: var(--var-white);
+        }
+
+        .section-number {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 32px;
+            height: 32px;
+            background: var(--var-red);
+            color: var(--var-white);
+            font-weight: 800;
+            font-size: 0.85rem;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(1.6rem, 4vw, 2.2rem);
+            color: var(--var-dark);
+            margin-bottom: 0.5rem;
+            line-height: 1.2;
+        }
+
+        .section-desc {
+            font-size: 0.95rem;
+            color: var(--var-muted);
+            margin-bottom: 2rem;
+            line-height: 1.6;
+        }
+
+        /* ========== SECTION 2 — CONDITIONS ========== */
+        .conditions-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+        }
+
+        .cond-block {
+            background: var(--var-white);
+            border-radius: 12px;
+            padding: 2rem;
+            border: 1px solid var(--var-border);
+        }
+
+        .section-alt .cond-block {
+            background: var(--var-cream);
+        }
+
+        .cond-block h3 {
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--var-dark);
+            margin-bottom: 1.25rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .cond-block h3 .icon {
+            width: 28px;
+            height: 28px;
+            background: rgba(196, 30, 42, 0.08);
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .cond-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0.7rem;
+        }
+
+        .cond-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.6rem;
+            font-size: 0.88rem;
+            color: var(--var-text);
+            line-height: 1.5;
+        }
+
+        .cond-list li::before {
+            content: '';
+            flex-shrink: 0;
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            border: 2px solid var(--var-red);
+            margin-top: 2px;
+            background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 24 24' fill='none' stroke='%23C41E2A' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'/%3E%3C/svg%3E") center/10px no-repeat;
+        }
+
+        .category-options {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .radio-option {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 1rem 1.25rem;
+            background: var(--var-white);
+            border: 2px solid var(--var-border);
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .section-alt .radio-option {
+            background: var(--var-cream);
+        }
+
+        .radio-option:hover {
+            border-color: var(--var-red);
+        }
+
+        .radio-option input[type="radio"] {
+            appearance: none;
+            width: 20px;
+            height: 20px;
+            border: 2px solid var(--var-border);
+            border-radius: 50%;
+            flex-shrink: 0;
+            position: relative;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .radio-option input[type="radio"]:checked {
+            border-color: var(--var-red);
+        }
+
+        .radio-option input[type="radio"]:checked::after {
+            content: '';
+            position: absolute;
+            top: 3px;
+            left: 3px;
+            width: 10px;
+            height: 10px;
+            background: var(--var-red);
+            border-radius: 50%;
+        }
+
+        .radio-option input[type="radio"]:checked ~ .radio-label {
+            color: var(--var-dark);
+            font-weight: 600;
+        }
+
+        .radio-label {
+            font-size: 0.92rem;
+            color: var(--var-muted);
+            transition: all 0.2s ease;
+        }
+
+        /* ========== SECTION 3 — FORM ========== */
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.25rem;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.4rem;
+        }
+
+        .form-group.full {
+            grid-column: 1 / -1;
+        }
+
+        .form-group label {
+            font-size: 0.82rem;
+            font-weight: 600;
+            color: var(--var-dark);
+            letter-spacing: 0.01em;
+        }
+
+        .form-group label .required {
+            color: var(--var-red);
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            padding: 0.85rem 1rem;
+            border: 1.5px solid var(--var-border);
+            border-radius: 8px;
+            font-family: inherit;
+            font-size: 0.92rem;
+            color: var(--var-text);
+            background: var(--var-white);
+            transition: border-color 0.2s ease, box-shadow 0.2s ease;
+            outline: none;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            border-color: var(--var-red);
+            box-shadow: 0 0 0 3px rgba(196, 30, 42, 0.08);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        .form-group select {
+            appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%236B6B6B' stroke-width='2' stroke-linecap='round'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 1rem center;
+            padding-right: 2.5rem;
+        }
+
+        .commission-toggle {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+        }
+
+        .commission-toggle label {
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+            font-size: 0.92rem;
+            cursor: pointer;
+        }
+
+        .commission-toggle input[type="radio"] {
+            appearance: none;
+            width: 18px;
+            height: 18px;
+            border: 2px solid var(--var-border);
+            border-radius: 50%;
+            position: relative;
+            cursor: pointer;
+        }
+
+        .commission-toggle input[type="radio"]:checked {
+            border-color: var(--var-red);
+        }
+
+        .commission-toggle input[type="radio"]:checked::after {
+            content: '';
+            position: absolute;
+            top: 3px;
+            left: 3px;
+            width: 8px;
+            height: 8px;
+            background: var(--var-red);
+            border-radius: 50%;
+        }
+
+        #commission-select {
+            display: none;
+            margin-top: 0.5rem;
+        }
+
+        #commission-select.visible {
+            display: block;
+        }
+
+        /* ========== SECTION 4 — DOCUMENTS ========== */
+        .upload-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.25rem;
+            margin-bottom: 2rem;
+        }
+
+        .upload-box {
+            border: 2px dashed var(--var-border);
+            border-radius: 10px;
+            padding: 1.5rem;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            position: relative;
+            background: var(--var-white);
+        }
+
+        .section-alt .upload-box {
+            background: var(--var-cream);
+        }
+
+        .upload-box:hover {
+            border-color: var(--var-red);
+            background: rgba(196, 30, 42, 0.02);
+        }
+
+        .upload-box.has-file {
+            border-color: #2E7D32;
+            border-style: solid;
+            background: rgba(46, 125, 50, 0.03);
+        }
+
+        .upload-box input[type="file"] {
+            position: absolute;
+            inset: 0;
+            opacity: 0;
+            cursor: pointer;
+        }
+
+        .upload-icon {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            color: var(--var-muted);
+        }
+
+        .upload-box.has-file .upload-icon {
+            color: #2E7D32;
+        }
+
+        .upload-label {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--var-dark);
+            margin-bottom: 0.25rem;
+        }
+
+        .upload-hint {
+            font-size: 0.75rem;
+            color: var(--var-muted);
+        }
+
+        .upload-filename {
+            font-size: 0.78rem;
+            color: #2E7D32;
+            font-weight: 600;
+            margin-top: 0.3rem;
+            display: none;
+        }
+
+        .upload-box.has-file .upload-filename {
+            display: block;
+        }
+
+        .upload-box.has-file .upload-hint {
+            display: none;
+        }
+
+        .declarations {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .decl-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+            padding: 1rem;
+            background: var(--var-white);
+            border: 1px solid var(--var-border);
+            border-radius: 8px;
+        }
+
+        .section-alt .decl-item {
+            background: var(--var-cream);
+        }
+
+        .decl-item input[type="checkbox"] {
+            appearance: none;
+            width: 20px;
+            height: 20px;
+            border: 2px solid var(--var-border);
+            border-radius: 5px;
+            flex-shrink: 0;
+            cursor: pointer;
+            position: relative;
+            margin-top: 1px;
+            transition: all 0.2s ease;
+        }
+
+        .decl-item input[type="checkbox"]:checked {
+            background: var(--var-red);
+            border-color: var(--var-red);
+        }
+
+        .decl-item input[type="checkbox"]:checked::after {
+            content: '';
+            position: absolute;
+            top: 2px;
+            left: 5px;
+            width: 6px;
+            height: 10px;
+            border: solid white;
+            border-width: 0 2px 2px 0;
+            transform: rotate(45deg);
+        }
+
+        .decl-text {
+            font-size: 0.88rem;
+            color: var(--var-text);
+            line-height: 1.5;
+        }
+
+        /* ========== SECTION 5 — SUBMIT ========== */
+        .submit-actions {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            align-items: center;
+            margin-bottom: 2.5rem;
+        }
+
+        .btn-submit {
+            width: 100%;
+            max-width: 400px;
+            padding: 1.1rem 2rem;
+            background: var(--var-red);
+            color: var(--var-white);
+            border: none;
+            border-radius: 8px;
+            font-family: inherit;
+            font-size: 1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .btn-submit:hover {
+            background: var(--var-red-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(196, 30, 42, 0.3);
+        }
+
+        .btn-download-row {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .btn-download {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.5rem;
+            border: 1.5px solid var(--var-border);
+            border-radius: 8px;
+            background: var(--var-white);
+            color: var(--var-text);
+            font-family: inherit;
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .btn-download:hover {
+            border-color: var(--var-red);
+            color: var(--var-red);
+        }
+
+        .success-msg {
+            display: none;
+            text-align: center;
+            padding: 2rem;
+            background: rgba(46, 125, 50, 0.06);
+            border: 1px solid rgba(46, 125, 50, 0.2);
+            border-radius: 12px;
+            margin-bottom: 2rem;
+        }
+
+        .success-msg .check-icon {
+            width: 48px;
+            height: 48px;
+            background: #2E7D32;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+            color: white;
+            font-size: 1.5rem;
+        }
+
+        .success-msg h3 {
+            font-size: 1.1rem;
+            color: #2E7D32;
+            margin-bottom: 0.5rem;
+        }
+
+        .success-msg p {
+            font-size: 0.9rem;
+            color: var(--var-muted);
+            line-height: 1.6;
+        }
+
+        .contact-block {
+            background: var(--var-white);
+            border: 1px solid var(--var-border);
+            border-radius: 12px;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .section-alt .contact-block {
+            background: var(--var-cream);
+        }
+
+        .contact-block h3 {
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--var-dark);
+            margin-bottom: 1rem;
+        }
+
+        .contact-items {
+            display: flex;
+            flex-direction: column;
+            gap: 0.6rem;
+            align-items: center;
+        }
+
+        .contact-items a,
+        .contact-items span {
+            font-size: 0.88rem;
+            color: var(--var-muted);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .contact-items a:hover {
+            color: var(--var-red);
+        }
+
+        .contact-icon {
+            width: 16px;
+            height: 16px;
+            flex-shrink: 0;
+        }
+
+        /* ========== FOOTER ========== */
+        .footer {
+            padding: 1.5rem;
+            text-align: center;
+            border-top: 1px solid var(--var-border);
+        }
+
+        .footer-text {
+            font-size: 0.78rem;
+            color: var(--var-muted);
+        }
+
+        .footer-text a {
+            color: var(--var-red);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        /* ========== DIVIDER ========== */
+        .red-bar {
+            height: 3px;
+            background: linear-gradient(90deg, var(--var-red), var(--var-red-light));
+        }
+
+        /* ========== RESPONSIVE ========== */
+        @media (max-width: 640px) {
+            .conditions-grid,
+            .form-grid,
+            .upload-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .btn-download-row {
+                flex-direction: column;
+                width: 100%;
+            }
+
+            .btn-download {
+                width: 100%;
+                justify-content: center;
+            }
+
+            .hero {
+                padding: 2.5rem 0 3rem;
+            }
+        }
+
+        /* ========== ANIMATIONS ========== */
+        .reveal {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.6s ease;
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- SECTION 1 — HERO -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-label">PARTI POLITIQUE VAR</div>
+            <h1>Devenir membre</h1>
+            <p class="hero-subtitle">Rejoignez un mouvement structur&eacute;, disciplin&eacute; et pr&ecirc;t &agrave; agir pour Ha&iuml;ti.</p>
+            <p class="hero-slogan">Sa li f&egrave; Delmas, li ka f&egrave; l pou Ayiti.</p>
+            <a href="#inscription" class="hero-cta">
+                Commencer l'inscription
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </a>
+        </div>
+    </section>
+
+    <div class="red-bar"></div>
+
+    <form id="var-form" novalidate>
+
+    <!-- SECTION 2 — CONDITIONS + CATÉGORIE -->
+    <section class="section" id="inscription">
+        <div class="container">
+            <div class="section-number reveal">1</div>
+            <h2 class="section-title reveal">Conditions &amp; Cat&eacute;gorie</h2>
+            <p class="section-desc reveal">Veuillez prendre connaissance des conditions avant de commencer.</p>
+
+            <div class="conditions-grid">
+                <div class="cond-block reveal">
+                    <h3>
+                        <span class="icon">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#C41E2A" stroke-width="2.5" stroke-linecap="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                        </span>
+                        Conditions d'adh&eacute;sion
+                    </h3>
+                    <ul class="cond-list">
+                        <li>&Ecirc;tre de nationalit&eacute; ha&iuml;tienne</li>
+                        <li>&Ecirc;tre &acirc;g&eacute; de 18 ans r&eacute;volus</li>
+                        <li>Accepter les statuts et la charte du parti</li>
+                        <li>Jouir de ses droits civils et politiques</li>
+                        <li>D&eacute;tenir une CIN et un NIF</li>
+                        <li>Fournir une lettre de demande d'adh&eacute;sion</li>
+                        <li>Soumettre un certificat de bonne vie et m&oelig;urs</li>
+                    </ul>
+                </div>
+
+                <div class="cond-block reveal">
+                    <h3>
+                        <span class="icon">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#C41E2A" stroke-width="2.5" stroke-linecap="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                        </span>
+                        Cat&eacute;gorie de membre
+                    </h3>
+                    <div class="category-options">
+                        <label class="radio-option">
+                            <input type="radio" name="categorie" value="fondateur" required />
+                            <span class="radio-label">Membre fondateur</span>
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="categorie" value="adherent" />
+                            <span class="radio-label">Membre adh&eacute;rent</span>
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="categorie" value="honneur" />
+                            <span class="radio-label">Membre d'honneur</span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 3 — FORMULAIRE PRINCIPAL -->
+    <section class="section section-alt">
+        <div class="container">
+            <div class="section-number reveal">2</div>
+            <h2 class="section-title reveal">Informations personnelles</h2>
+            <p class="section-desc reveal">Remplissez tous les champs obligatoires marqu&eacute;s d'un ast&eacute;risque.</p>
+
+            <div class="form-grid">
+                <div class="form-group full reveal">
+                    <label>Nom complet <span class="required">*</span></label>
+                    <input type="text" name="nom_complet" required placeholder="Pr&eacute;nom et nom de famille" />
+                </div>
+
+                <div class="form-group reveal">
+                    <label>Sexe <span class="required">*</span></label>
+                    <select name="sexe" required>
+                        <option value="">S&eacute;lectionner</option>
+                        <option value="M">Masculin</option>
+                        <option value="F">F&eacute;minin</option>
+                    </select>
+                </div>
+
+                <div class="form-group reveal">
+                    <label>Date de naissance <span class="required">*</span></label>
+                    <input type="date" name="date_naissance" required />
+                </div>
+
+                <div class="form-group reveal">
+                    <label>&Acirc;ge</label>
+                    <input type="number" name="age" placeholder="Calcul&eacute; automatiquement" readonly id="age-field" />
+                </div>
+
+                <div class="form-group reveal">
+                    <label>T&eacute;l&eacute;phone <span class="required">*</span></label>
+                    <input type="tel" name="telephone" required placeholder="+509 ..." />
+                </div>
+
+                <div class="form-group reveal">
+                    <label>Email</label>
+                    <input type="email" name="email" placeholder="votre@email.com" />
+                </div>
+
+                <div class="form-group full reveal">
+                    <label>Adresse compl&egrave;te <span class="required">*</span></label>
+                    <input type="text" name="adresse" required placeholder="Rue, num&eacute;ro, quartier" />
+                </div>
+
+                <div class="form-group reveal">
+                    <label>D&eacute;partement <span class="required">*</span></label>
+                    <select name="departement" required>
+                        <option value="">S&eacute;lectionner</option>
+                        <option>Artibonite</option>
+                        <option>Centre</option>
+                        <option>Grand'Anse</option>
+                        <option>Nippes</option>
+                        <option>Nord</option>
+                        <option>Nord-Est</option>
+                        <option>Nord-Ouest</option>
+                        <option>Ouest</option>
+                        <option>Sud</option>
+                        <option>Sud-Est</option>
+                    </select>
+                </div>
+
+                <div class="form-group reveal">
+                    <label>Commune <span class="required">*</span></label>
+                    <input type="text" name="commune" required placeholder="Votre commune" />
+                </div>
+
+                <div class="form-group reveal">
+                    <label>Profession</label>
+                    <input type="text" name="profession" placeholder="Votre profession" />
+                </div>
+
+                <div class="form-group reveal">
+                    <label>Niveau d'&eacute;tudes</label>
+                    <select name="niveau_etudes">
+                        <option value="">S&eacute;lectionner</option>
+                        <option>Primaire</option>
+                        <option>Secondaire</option>
+                        <option>Universitaire</option>
+                        <option>Post-universitaire</option>
+                        <option>Formation professionnelle</option>
+                    </select>
+                </div>
+
+                <div class="form-group reveal">
+                    <label>Num&eacute;ro CIN <span class="required">*</span></label>
+                    <input type="text" name="cin" required placeholder="Num&eacute;ro CIN" />
+                </div>
+
+                <div class="form-group reveal">
+                    <label>Num&eacute;ro NIF <span class="required">*</span></label>
+                    <input type="text" name="nif" required placeholder="Num&eacute;ro NIF" />
+                </div>
+
+                <div class="form-group full reveal">
+                    <label>Pourquoi souhaitez-vous rejoindre le Parti Politique VAR ? <span class="required">*</span></label>
+                    <textarea name="motivation" required placeholder="D&eacute;crivez votre motivation..."></textarea>
+                </div>
+
+                <div class="form-group full reveal">
+                    <label>Quelles comp&eacute;tences pouvez-vous apporter au parti ?</label>
+                    <textarea name="competences" placeholder="D&eacute;crivez vos comp&eacute;tences..."></textarea>
+                </div>
+
+                <div class="form-group full reveal">
+                    <label>Souhaitez-vous int&eacute;grer une commission technique ?</label>
+                    <div class="commission-toggle">
+                        <label>
+                            <input type="radio" name="commission_oui" value="oui" id="comm-yes" />
+                            Oui
+                        </label>
+                        <label>
+                            <input type="radio" name="commission_oui" value="non" id="comm-no" checked />
+                            Non
+                        </label>
+                    </div>
+                    <div id="commission-select">
+                        <select name="commission">
+                            <option value="">Choisir une commission</option>
+                            <option>Commission &Eacute;ducation</option>
+                            <option>Commission Sant&eacute;</option>
+                            <option>Commission &Eacute;conomie</option>
+                            <option>Commission S&eacute;curit&eacute;</option>
+                            <option>Commission Jeunesse</option>
+                            <option>Commission Agriculture</option>
+                            <option>Commission Infrastructure</option>
+                            <option>Commission Communication</option>
+                            <option>Commission Diaspora</option>
+                            <option>Commission Juridique</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 4 — DOCUMENTS + DÉCLARATIONS -->
+    <section class="section">
+        <div class="container">
+            <div class="section-number reveal">3</div>
+            <h2 class="section-title reveal">Documents &amp; D&eacute;clarations</h2>
+            <p class="section-desc reveal">T&eacute;l&eacute;chargez les documents requis (PDF, JPG ou PNG).</p>
+
+            <div class="upload-grid">
+                <div class="upload-box reveal" id="up-cin">
+                    <input type="file" name="doc_cin" accept=".pdf,.jpg,.jpeg,.png" />
+                    <div class="upload-icon">&#128196;</div>
+                    <div class="upload-label">CIN</div>
+                    <div class="upload-hint">PDF, JPG ou PNG</div>
+                    <div class="upload-filename"></div>
+                </div>
+                <div class="upload-box reveal" id="up-nif">
+                    <input type="file" name="doc_nif" accept=".pdf,.jpg,.jpeg,.png" />
+                    <div class="upload-icon">&#128196;</div>
+                    <div class="upload-label">NIF</div>
+                    <div class="upload-hint">PDF, JPG ou PNG</div>
+                    <div class="upload-filename"></div>
+                </div>
+                <div class="upload-box reveal" id="up-lettre">
+                    <input type="file" name="doc_lettre" accept=".pdf,.jpg,.jpeg,.png" />
+                    <div class="upload-icon">&#128196;</div>
+                    <div class="upload-label">Lettre de demande d'adh&eacute;sion</div>
+                    <div class="upload-hint">PDF, JPG ou PNG</div>
+                    <div class="upload-filename"></div>
+                </div>
+                <div class="upload-box reveal" id="up-certificat">
+                    <input type="file" name="doc_certificat" accept=".pdf,.jpg,.jpeg,.png" />
+                    <div class="upload-icon">&#128196;</div>
+                    <div class="upload-label">Certificat de bonne vie et m&oelig;urs</div>
+                    <div class="upload-hint">PDF, JPG ou PNG</div>
+                    <div class="upload-filename"></div>
+                </div>
+                <div class="upload-box reveal" id="up-photo">
+                    <input type="file" name="doc_photo" accept=".jpg,.jpeg,.png" />
+                    <div class="upload-icon">&#128247;</div>
+                    <div class="upload-label">Photo d'identit&eacute;</div>
+                    <div class="upload-hint">JPG ou PNG</div>
+                    <div class="upload-filename"></div>
+                </div>
+            </div>
+
+            <h3 style="font-size:1rem;margin-bottom:1rem;color:var(--var-dark);" class="reveal">D&eacute;clarations</h3>
+            <div class="declarations">
+                <label class="decl-item reveal">
+                    <input type="checkbox" name="accept_statuts" required />
+                    <span class="decl-text">J'accepte les statuts du parti</span>
+                </label>
+                <label class="decl-item reveal">
+                    <input type="checkbox" name="accept_charte" required />
+                    <span class="decl-text">J'accepte la charte du parti</span>
+                </label>
+                <label class="decl-item reveal">
+                    <input type="checkbox" name="confirm_info" required />
+                    <span class="decl-text">Je confirme que les informations fournies sont exactes</span>
+                </label>
+                <label class="decl-item reveal">
+                    <input type="checkbox" name="authorize_review" required />
+                    <span class="decl-text">J'autorise le Parti Politique VAR &agrave; examiner ma demande</span>
+                </label>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 5 — SOUMISSION + CONTACT -->
+    <section class="section section-alt">
+        <div class="container">
+            <div class="section-number reveal">4</div>
+            <h2 class="section-title reveal">Soumission</h2>
+            <p class="section-desc reveal">V&eacute;rifiez vos informations puis soumettez votre demande.</p>
+
+            <div class="success-msg" id="success-msg">
+                <div class="check-icon">&#10003;</div>
+                <h3>Demande soumise avec succ&egrave;s !</h3>
+                <p>Votre demande a &eacute;t&eacute; soumise avec succ&egrave;s. L'&eacute;quipe du VAR vous contactera apr&egrave;s examen de votre dossier.</p>
+            </div>
+
+            <div class="submit-actions reveal" id="submit-actions">
+                <button type="submit" class="btn-submit">Soumettre ma demande</button>
+                <div class="btn-download-row">
+                    <a href="#" class="btn-download">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                        T&eacute;l&eacute;charger les statuts
+                    </a>
+                    <a href="#" class="btn-download">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                        T&eacute;l&eacute;charger la charte
+                    </a>
+                </div>
+            </div>
+
+            <div class="contact-block reveal">
+                <h3>Besoin d'aide ?</h3>
+                <div class="contact-items">
+                    <a href="mailto:partipolitiquevar@gmail.com">
+                        <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                        partipolitiquevar@gmail.com
+                    </a>
+                    <a href="tel:+50931849347">
+                        <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                        +509 31 84 9347 / 33 28 04 88
+                    </a>
+                    <span>
+                        <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                        2, rue Charbonni&egrave;re, Delmas, Ouest, Ha&iuml;ti
+                    </span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    </form>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <p class="footer-text">Powered by <a href="https://48hoursready.com">48HoursReady.com</a></p>
+    </footer>
+
+    <script>
+    (function() {
+        // Scroll reveal
+        var obs = new IntersectionObserver(function(entries) {
+            entries.forEach(function(e) { if (e.isIntersecting) e.target.classList.add('visible'); });
+        }, { threshold: 0.1, rootMargin: '0px 0px -30px 0px' });
+        document.querySelectorAll('.reveal').forEach(function(el) { obs.observe(el); });
+
+        // Auto-calculate age
+        var dobField = document.querySelector('input[name="date_naissance"]');
+        var ageField = document.getElementById('age-field');
+        if (dobField && ageField) {
+            dobField.addEventListener('change', function() {
+                var dob = new Date(this.value);
+                var today = new Date();
+                var age = today.getFullYear() - dob.getFullYear();
+                var m = today.getMonth() - dob.getMonth();
+                if (m < 0 || (m === 0 && today.getDate() < dob.getDate())) age--;
+                ageField.value = age > 0 ? age : '';
+            });
+        }
+
+        // Commission toggle
+        var commYes = document.getElementById('comm-yes');
+        var commNo = document.getElementById('comm-no');
+        var commSelect = document.getElementById('commission-select');
+        if (commYes && commNo && commSelect) {
+            commYes.addEventListener('change', function() { commSelect.classList.add('visible'); });
+            commNo.addEventListener('change', function() { commSelect.classList.remove('visible'); });
+        }
+
+        // File upload labels
+        document.querySelectorAll('.upload-box input[type="file"]').forEach(function(input) {
+            input.addEventListener('change', function() {
+                var box = this.closest('.upload-box');
+                var fnEl = box.querySelector('.upload-filename');
+                if (this.files.length) {
+                    box.classList.add('has-file');
+                    fnEl.textContent = this.files[0].name;
+                } else {
+                    box.classList.remove('has-file');
+                    fnEl.textContent = '';
+                }
+            });
+        });
+
+        // Form submit
+        var form = document.getElementById('var-form');
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            var success = document.getElementById('success-msg');
+            var actions = document.getElementById('submit-actions');
+            success.style.display = 'block';
+            actions.style.display = 'none';
+            success.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        });
+    })();
+    </script>
+</body>
+</html>
